@@ -177,6 +177,7 @@ function App() {
     if (checkWinner(computerBoard)) {
       setIsEnded(true);
       setIsWinner('computer');
+      return;
     }
 
     if (symbol === 'O' && emptyCells.length === 1) {
