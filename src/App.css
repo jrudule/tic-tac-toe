@@ -51,6 +51,61 @@
   justify-content: center;
 }
 
+.startButton {
+  background: #73ad80;
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 22px;
+  width: max-content;
+
+}
+.startButton:hover {
+  background: #217633;
+}
+
+.XO {
+  border: black 1px solid;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.XO button {
+  background: rgb(74, 155, 225);
+  margin-top: 20px;
+}
+
+.XO button:active {
+  background: rgb(0, 0, 0);
+}
+
+.X {
+  margin-right: 5px;
+}
+.XO div {
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .hidden {
   display: none;
+}
+
+.endGame {
+  font-weight: 500;
+  padding: 30px;
+  border-radius: 50px;
+}
+.endGameText {
+  font-size: 50px;
+}
+.restartButton {
+  background: #e09b32;
+  margin: 20px 0;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+.restartButton:hover {
+  background: #ae6d0c;
 }
