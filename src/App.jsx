@@ -220,7 +220,7 @@ function App() {
           </div>
       </div>
 
-      <div className={isStarted ? '' : 'hidden'}>
+      <div className={isStarted ? 'game' : 'hidden'}>
         <div>
           {board.map((row, rowIndex) => (
             <div key={rowIndex} className="row" style={{ display: "flex", marginBottom: "10px" }}>
@@ -234,6 +234,12 @@ function App() {
             </div>
           ))}
         </div>
+
+        <ul className={isEnded ? 'hidden' : 'rules'}>
+          <li>Place your symbol (X or O) in an empty square.</li>
+          <li>Get 3 in a row (horizontal, vertical, or diagonal) to win.</li>
+          <li>If all squares are filled with no winner, it’s a tie.</li>
+        </ul>
 
         <div className={isEnded ? 'endGame' : 'hidden'}>
           <button className='restartButton' onClick={() => restartGame()}>
