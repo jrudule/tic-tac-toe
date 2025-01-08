@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [isStarted, setIsStarted] = useState(false);
+  const [showRules, setShowRules] = useState(false);
   const [board, setBoard] = useState(Array(3).fill(Array(3).fill('')));
   const [isEnded, setIsEnded] = useState(false);
   const [isWinner, setIsWinner] = useState(null);
@@ -151,7 +152,7 @@ function App() {
     // Computer's move
     let compRow, compCol, result;
     if (findWinningRowOrCol(userBoard, computerSymbol)) {
-      result =findWinningRowOrCol(userBoard, computerSymbol);
+      result = findWinningRowOrCol(userBoard, computerSymbol);
     } 
     else if (findWinningDiagonal(userBoard, computerSymbol)) {
       result = findWinningDiagonal(userBoard, computerSymbol);
@@ -195,7 +196,16 @@ function App() {
 
   return (
     <>
-      <div className={`${isStarted ? 'hidden' : ''} ${isEnded ? 'hidden' : ''}`}>
+      <div className={showRules ? 'rules' : 'hidden'}>
+        <div className='x' onClick={() => setShowRules(false)}>x</div>
+        <ul className={isEnded ? 'hidden' : 'ruleList'}>
+          <li>Place your symbol (X or O) in an empty square.</li>
+          <li>Get 3 in a row (horizontal, vertical, or diagonal) to win.</li>
+          <li>If all squares are filled with no winner, it’s a tie.</li>
+        </ul>
+      </div>
+
+      <div className={`${isStarted ? 'hidden' : 'start'} ${isEnded ? 'hidden' : ''}`}>
         <h1>Tic Tac Toe</h1>
         
         <div className="XO">
@@ -209,6 +219,9 @@ function App() {
         </div>
         <button className='startButton' onClick={() => startGame()}>
           Start
+        </button>
+        <button className='howToPlay' onClick={() => setShowRules(true)}>
+          How to play
         </button>
       </div>
 
@@ -234,12 +247,6 @@ function App() {
             </div>
           ))}
         </div>
-
-        <ul className={isEnded ? 'hidden' : 'rules'}>
-          <li>Place your symbol (X or O) in an empty square.</li>
-          <li>Get 3 in a row (horizontal, vertical, or diagonal) to win.</li>
-          <li>If all squares are filled with no winner, it’s a tie.</li>
-        </ul>
 
         <div className={isEnded ? 'endGame' : 'hidden'}>
           <button className='restartButton' onClick={() => restartGame()}>

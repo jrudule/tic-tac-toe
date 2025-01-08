@@ -85,6 +85,7 @@
 .XO div {
   font-weight: bold;
   font-size: 20px;
+  margin: 0 5px;
 }
 
 .hidden {
@@ -116,7 +117,57 @@
   align-items: center;
 }
 
-.rules {
+.ruleList {
   text-align: left;
   list-style-type:square;
 }
+
+.start{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.howToPlay {
+  margin-top: 10px;
+  background: #ed6c6c;
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 22px;
+}
+.howToPlay:hover {
+  background: #af3535;
+}
+
+.rules {
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: 5;
+  top: 60%;
+  left: 0; 
+  right: 0; 
+  width: fit-content;
+  margin-inline: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: #000 solid 1px;
+  text-align: left;
+}
+
+.x {
+  background: rgb(72, 199, 72);
+  width: max-content;
+  padding: 0 6px 2px;
+  border-radius: 5px;
+  color: rgb(228, 228, 228);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.x:hover {
+  background: rgb(27, 81, 10);
+  color: #000;
+  cursor: pointer;
+}
+
